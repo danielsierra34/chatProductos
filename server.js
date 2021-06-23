@@ -22,6 +22,11 @@ app.engine('hbs',handlebars({
     partialsDir: __dirname + '/views/partials/'
 }))
 
+
+app.get('/',(request,response)=>{
+    response.render('api/productos')
+})
+
 app.set('view engine', 'hbs')
 app.set('views', __dirname + '/views')   
  
