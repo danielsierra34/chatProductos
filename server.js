@@ -15,8 +15,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+app.get('/',(request,response)=>{
+    response.render('api/productos')
+})
+
 app.engine('hbs',handlebars({ 
-    extname: '.hbs',
+    extname: '.hbs', 
     defaultLayout: 'index.hbs',
     layoutsDir: __dirname + '/views/',
     partialsDir: __dirname + '/views/partials/'
